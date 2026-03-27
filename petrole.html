@@ -8,28 +8,59 @@
 
 <style>
 
-.advantages{
-border-left:6px solid #2ecc71;
-padding:15px;
-background:rgba(0,0,0,0.4);
+/* MAIN BOX */
+.presentation{
+max-width:1100px;
+margin:auto;
+padding:20px;
 }
 
-.disadvantages{
-border-left:6px solid #e74c3c;
-padding:15px;
-background:rgba(0,0,0,0.4);
+/* ROOMS */
+.room{
+margin:40px 0;
+padding:25px;
+background:rgba(0,0,0,0.6);
+border-radius:15px;
+box-shadow:0 0 25px rgba(0,0,0,0.7);
+transform:translateY(50px);
+opacity:0;
+animation:fadeUp 1s ease forwards;
 }
 
-.environment{
-border-left:6px solid #3498db;
-padding:15px;
-background:rgba(0,0,0,0.4);
+/* ANIMATION DELAY (nice effect) */
+.room:nth-child(1){animation-delay:0.2s;}
+.room:nth-child(2){animation-delay:0.4s;}
+.room:nth-child(3){animation-delay:0.6s;}
+.room:nth-child(4){animation-delay:0.8s;}
+.room:nth-child(5){animation-delay:1s;}
+.room:nth-child(6){animation-delay:1.2s;}
+.room:nth-child(7){animation-delay:1.4s;}
+.room:nth-child(8){animation-delay:1.6s;}
+
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+h2{
+color:#f39c12;
+}
+
+p, li{
+line-height:1.6;
+text-align:left;
 }
 
 ul{
-text-align:left;
-max-width:800px;
-margin:auto;
+padding-left:20px;
+}
+
+img{
+width:100%;
+border-radius:10px;
+margin-top:15px;
 }
 
 </style>
@@ -50,15 +81,15 @@ margin:auto;
 
 <div class="content">
 
-<div class="card">
+<div class="presentation">
+
+<!-- INTRO -->
+<div class="room">
 
 <h1>Le Pétrole</h1>
 
 <p>
-Le pétrole est une ressource énergétique fossile formée à partir de la transformation de matières
-organiques enfouies dans les sédiments pendant des millions d'années. Sous l'effet de la pression
-et de la température, ces matières se transforment en hydrocarbures qui s'accumulent dans
-certaines roches du sous-sol.
+L’exploitation pétrolière a de nombreuses conséquences négatives, notamment : pollution de l’air, de l’eau et des sols, marées noires, dégazages sauvages, destruction des forêts, pollution des nappes phréatiques, rejets de gaz à effet de serre contribuant au changement climatique, destruction des paysages, déforestation, risques pour la santé humaine notamment liée à l’exposition aux hydrocarbures toxiques, déchets industriels et chimiques issus de l’exploitation, impacts psychosociaux sur les communautés touchées, risques de catastrophes secondaires comme les explosions, et épuisement des ressources fossiles limitées. Le transport du pétrole est énergivore et génère aussi des pollutions.
 </p>
 
 <br>
@@ -70,67 +101,70 @@ Voir le modèle 3D
 
 </div>
 
-<div class="section">
-
-<h2>Exploitation du pétrole</h2>
-
+<!-- 1 -->
+<div class="room">
+<h2>1. Informations géologiques</h2>
 <p>
-L’exploitation du pétrole commence par la recherche des gisements grâce à des études géologiques.
-Ensuite, des forages sont réalisés pour extraire le pétrole brut du sous-sol.
-Il est ensuite transporté vers des raffineries où il est transformé en produits utilisables.
+Le pétrole est formé par la décomposition de la matière organique enfouie sous des couches sédimentaires pendant des millions d’années. Il est souvent piégé dans des réservoirs rocheux poreux sous une couche imperméable. L’exploration utilise des techniques avancées de géophysique : gravimétrie, sismique, diagraphie, électrographie de fond marin, etc. L’exploitation exige des matériaux spécifiques capables de résister à des conditions extrêmes (pressions, température, gaz acides). L’industrie pétrolière a largement contribué au progrès de nombreuses technologies.
+</p>
+</div>
+
+<!-- 2 -->
+<div class="room">
+<h2>2. Nombre de puits de pétrole</h2>
+<p>
+Au niveau mondial, on dénombre plusieurs centaines de milliers de puits actifs couvrant tous les continents...
+</p>
+</div>
+
+<!-- 3 -->
+<div class="room">
+<h2>3. L'exploitation du pétrole</h2>
+<p>
+Elle a été l’un des moteurs majeurs du développement industriel et économique du XXᵉ siècle...
+</p>
+</div>
+
+<!-- 4 -->
+<div class="room">
+<h2>4. Impacts environnementaux</h2>
+<p>
+Ils sont énormes et souvent invisibles...
 </p>
 
-<ul>
-<li>Forage terrestre ou offshore (en mer)</li>
-<li>Transport par pipelines ou pétroliers</li>
-<li>Raffinage en carburants et produits chimiques</li>
-</ul>
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Oil_platform.jpg">
-
-</div>
-
-<!-- EXEMPLES -->
-
-<div class="section">
-
-<h2>Exemples d’utilisation du pétrole</h2>
-
-<ul>
-<li>Carburants : essence, diesel, kérosène</li>
-<li>Plastiques : bouteilles, emballages</li>
-<li>Produits chimiques : médicaments, cosmétiques</li>
-<li>Textiles : fibres synthétiques (polyester)</li>
-</ul>
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Plastic_bottles.jpg/800px-Plastic_bottles.jpg">
-
-</div>
-
-<!-- CONSEQUENCES -->
-
-<div class="section">
-
-<h2>Conséquences sur la santé et l’environnement</h2>
-
-<ul>
-
-<li><b>Pollution de l’air :</b> provoque des maladies respiratoires</li>
-
-<li><b>Réchauffement climatique :</b> augmentation du CO₂</li>
-
-<li><b>Pollution des océans :</b> marées noires</li>
-
-<li><b>Impact sur la santé :</b> substances toxiques dangereuses</li>
-
-<li><b>Destruction des écosystèmes :</b> perte de biodiversité</li>
-
-<li><b>Contamination des sols :</b> terres inutilisables</li>
-
-</ul>
-
 <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Oil_spill.jpg">
+</div>
 
+<!-- 5 -->
+<div class="room">
+<h2>5. Impacts sanitaires</h2>
+<p>
+Le pétrole pollue l'air, le sol et l'eau...
+</p>
+</div>
+
+<!-- 6 -->
+<div class="room">
+<h2>6. Conséquences économiques et géopolitiques</h2>
+<p>
+Le pétrole reste la principale source d’énergie mondiale...
+</p>
+</div>
+
+<!-- 7 -->
+<div class="room">
+<h2>7. Enjeux sociaux et climatiques</h2>
+<p>
+La sortie du pétrole est indispensable...
+</p>
+</div>
+
+<!-- 8 -->
+<div class="room">
+<h2>Conclusion</h2>
+<p>
+L’exploitation du pétrole, moteur du progrès industriel, est aussi l’un des principaux facteurs de dégradation de la planète...
+</p>
 </div>
 
 </div>
