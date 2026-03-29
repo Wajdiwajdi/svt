@@ -3,16 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pétrole – Présentation</title>
-<link rel="stylesheet" href="style.css">
+<title>Pétrole – Ultimate</title>
 
 <style>
 
+/* BACKGROUND */
+body{
+margin:0;
+font-family:Arial, sans-serif;
+color:white;
+overflow:hidden;
+background:linear-gradient(270deg,#0f2027,#203a43,#2c5364);
+background-size:600% 600%;
+animation:bgMove 15s ease infinite;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* SIDEBAR */
+#sidebar{
+position:fixed;
+left:-220px;
+top:0;
+width:220px;
+height:100%;
+background:#111;
+padding-top:20px;
+transition:0.3s;
+}
+
+#sidebar a{
+display:block;
+color:white;
+padding:15px;
+text-decoration:none;
+}
+
+#sidebar a:hover{
+background:#f39c12;
+}
+
+#sidebar:hover{
+left:0;
+}
+
+/* CONTENT */
+.content{
+margin-left:20px;
+padding:20px;
+}
+
+/* SLIDES */
 .slides{
 position:relative;
 width:100%;
-height:80vh;
-overflow:hidden;
+height:75vh;
 }
 
 .slide{
@@ -28,9 +77,11 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:30px;
-background:rgba(0,0,0,0.6);
-border-radius:15px;
+padding:40px;
+border-radius:20px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+box-shadow:0 0 30px rgba(0,0,0,0.6);
 }
 
 .slide.active{
@@ -38,25 +89,39 @@ left:0;
 opacity:1;
 }
 
-.slide.prev{
-left:-100%;
+/* TEXT */
+h1,h2{
+color:#f39c12;
 }
 
-h2{color:#f39c12;}
+p{
+max-width:900px;
+line-height:1.7;
+}
 
+/* BUTTONS */
 .controls{
-margin-top:20px;
 text-align:center;
+margin-top:15px;
 }
 
 button{
-margin:5px;
 padding:10px 20px;
-font-size:16px;
+margin:5px;
+border:none;
+border-radius:8px;
+background:#f39c12;
+color:white;
 cursor:pointer;
+transition:0.3s;
 }
 
-/* progress bar */
+button:hover{
+background:#e67e22;
+transform:scale(1.05);
+}
+
+/* PROGRESS BAR */
 .progress{
 position:fixed;
 top:0;
@@ -64,7 +129,17 @@ left:0;
 height:5px;
 background:#f39c12;
 width:0%;
-transition:width 0.3s;
+}
+
+/* AUTOPLAY INDICATOR */
+.auto{
+position:fixed;
+bottom:10px;
+right:10px;
+background:rgba(0,0,0,0.6);
+padding:8px 12px;
+border-radius:8px;
+font-size:14px;
 }
 
 </style>
@@ -89,91 +164,70 @@ transition:width 0.3s;
 
 <div class="slides">
 
-<!-- SLIDE 1 -->
 <div class="slide active">
 <h1>Le Pétrole</h1>
-<p>
-L’exploitation pétrolière a de nombreuses conséquences négatives, notamment : pollution de l’air, de l’eau et des sols...
-</p>
-
+<p>COLLE ICI TON TEXTE COMPLET</p>
 <button onclick="window.open('https://sketchfab.com/models/875a663302624757aac3d18b05653dfb/embed?autostart=1','_blank')">
 Voir le modèle 3D
 </button>
 </div>
 
-<!-- SLIDE 2 -->
 <div class="slide">
 <h2>1. Informations géologiques</h2>
-<p>
-Le pétrole est formé par la décomposition de la matière organique...
-</p>
+<p>COLLE TON TEXTE COMPLET</p>
 </div>
 
-<!-- SLIDE 3 -->
 <div class="slide">
 <h2>2. Nombre de puits</h2>
-<p>
-Au niveau mondial, on dénombre plusieurs centaines de milliers...
-</p>
+<p>COLLE TON TEXTE COMPLET</p>
 </div>
 
-<!-- SLIDE 4 -->
 <div class="slide">
 <h2>3. Exploitation</h2>
-<p>
-Elle a été l’un des moteurs majeurs du développement industriel...
-</p>
+<p>COLLE TON TEXTE COMPLET</p>
 </div>
 
-<!-- SLIDE 5 -->
 <div class="slide">
 <h2>4. Impacts environnementaux</h2>
-<p>
-Ils sont énormes et souvent invisibles...
-</p>
+<p>COLLE TON TEXTE COMPLET</p>
 </div>
 
-<!-- SLIDE 6 -->
 <div class="slide">
 <h2>5. Impacts sanitaires</h2>
-<p>
-Le pétrole pollue l'air, le sol et l'eau...
-</p>
+<p>COLLE TON TEXTE COMPLET</p>
 </div>
 
-<!-- SLIDE 7 -->
 <div class="slide">
 <h2>6. Économie et géopolitique</h2>
-<p>
-Le pétrole reste la principale source d’énergie mondiale...
-</p>
+<p>COLLE TON TEXTE COMPLET</p>
 </div>
 
-<!-- SLIDE 8 -->
 <div class="slide">
 <h2>Conclusion</h2>
-<p>
-L’exploitation du pétrole est à double tranchant...
-</p>
+<p>COLLE TON TEXTE COMPLET</p>
 </div>
 
 </div>
 
-<!-- CONTROLS -->
 <div class="controls">
-<button onclick="prevSlide()">⬅️ Précédent</button>
-<button onclick="nextSlide()">Suivant ➡️</button>
+<button onclick="prevSlide()">⬅️</button>
+<button onclick="toggleAuto()">⏯ Auto</button>
+<button onclick="nextSlide()">➡️</button>
 </div>
 
 </div>
+
+<div class="auto" id="autoStatus">Auto: OFF</div>
 
 <script>
 
 let slides = document.querySelectorAll(".slide");
 let index = 0;
+let auto = false;
+let interval;
 
 function showSlide(i){
-slides.forEach(s => s.classList.remove("active"));
+slides.forEach(s=>s.classList.remove("active"));
 slides[i].classList.add("active");
 
 document.getElementById("progress").style.width =
@@ -181,28 +235,36 @@ document.getElementById("progress").style.width =
 }
 
 function nextSlide(){
-if(index < slides.length-1){
-index++;
+index = (index+1) % slides.length;
 showSlide(index);
-}
 }
 
 function prevSlide(){
-if(index > 0){
-index--;
+index = (index-1+slides.length)%slides.length;
 showSlide(index);
+}
+
+/* AUTO MODE */
+function toggleAuto(){
+auto = !auto;
+
+document.getElementById("autoStatus").innerText =
+"Auto: " + (auto ? "ON" : "OFF");
+
+if(auto){
+interval = setInterval(nextSlide,4000);
+}else{
+clearInterval(interval);
 }
 }
 
-/* keyboard control */
+/* KEYBOARD */
 document.addEventListener("keydown", e=>{
-if(e.key === "ArrowRight") nextSlide();
-if(e.key === "ArrowLeft") prevSlide();
+if(e.key==="ArrowRight") nextSlide();
+if(e.key==="ArrowLeft") prevSlide();
 });
 
 </script>
-
-<footer>© Wajdi Mathlouthi</footer>
 
 </body>
 </html>
