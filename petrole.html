@@ -1,251 +1,318 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pétrole – Sciences 3D</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conséquences de l'exploitation du pétrole sur l'environnement et la santé</title>
+    <link rel="stylesheet" href="style.css"> <!-- Si tu as un fichier style.css global -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #e0f2f1;
+            min-height: 100vh;
+        }
 
-<style>
+        #sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 220px;
+            background: rgba(0, 0, 0, 0.85);
+            padding-top: 20px;
+            overflow-y: auto;
+            z-index: 100;
+        }
 
-/* ===== CONTENT CENTER ===== */
-.content{
-margin-left:20px;
-padding:30px;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-}
+        #sidebar a {
+            display: block;
+            padding: 15px 25px;
+            color: #b2dfdb;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
 
-/* ===== GLASS BOX (LIKE YOUR OTHER PAGES) ===== */
-.glass-box{
-width:900px;
-padding:35px;
-border-radius:20px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(12px);
-box-shadow:0 0 30px rgba(0,0,0,0.6);
-text-align:center;
-}
+        #sidebar a:hover, #sidebar a.active {
+            background: #f39c12;
+            color: white;
+            padding-left: 35px;
+        }
 
-/* ===== SLIDES ===== */
-.slide{
-display:none;
-animation:fade 0.5s ease;
-}
+        .content {
+            margin-left: 240px;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-.slide.active{
-display:block;
-}
+        .glass-box {
+            width: 1000px;
+            max-width: 95%;
+            padding: 40px 50px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.09);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+            text-align: left;
+        }
 
-@keyframes fade{
-from{opacity:0; transform:translateY(20px);}
-to{opacity:1; transform:translateY(0);}
-}
+        h1 {
+            color: #f39c12;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.8em;
+        }
 
-/* ===== TEXT ===== */
-h1{
-color:#f39c12;
-margin-bottom:15px;
-}
+        h2 {
+            color: #ffa726;
+            border-bottom: 3px solid #f39c12;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
 
-h2{
-color:#ffa726;
-margin-bottom:10px;
-}
+        p, li {
+            line-height: 1.85;
+            font-size: 1.05em;
+            margin-bottom: 18px;
+        }
 
-p{
-line-height:1.8;
-max-width:750px;
-margin:auto;
-}
+        .slide {
+            display: none;
+            animation: fadeIn 0.6s ease forwards;
+        }
 
-/* ===== BUTTON (SAME STYLE) ===== */
-.btn{
-margin-top:15px;
-padding:10px 20px;
-border:none;
-border-radius:10px;
-background:#f39c12;
-color:white;
-cursor:pointer;
-transition:0.3s;
-}
+        .slide.active {
+            display: block;
+        }
 
-.btn:hover{
-background:#e67e22;
-transform:scale(1.05);
-}
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-/* ===== CONTROLS ===== */
-.controls{
-margin-top:20px;
-}
+        .btn {
+            padding: 12px 28px;
+            margin: 10px 8px;
+            border: none;
+            border-radius: 12px;
+            background: #f39c12;
+            color: white;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
 
-/* ===== PROGRESS BAR ===== */
-.progress-container{
-width:100%;
-height:6px;
-background:#222;
-border-radius:10px;
-margin-top:20px;
-}
+        .btn:hover {
+            background: #e67e22;
+            transform: scale(1.08);
+        }
 
-.progress{
-height:100%;
-width:0%;
-background:#f39c12;
-border-radius:10px;
-transition:0.3s;
-}
+        .controls {
+            text-align: center;
+            margin-top: 40px;
+        }
 
-/* ===== AUTO TEXT ===== */
-.auto{
-margin-top:10px;
-font-size:14px;
-color:#ccc;
-}
+        .progress-container {
+            height: 8px;
+            background: #1a252f;
+            border-radius: 10px;
+            margin: 25px 0;
+            overflow: hidden;
+        }
 
-</style>
+        .progress {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(to right, #f39c12, #ffcc33);
+            transition: width 0.4s ease;
+        }
 
+        .auto {
+            text-align: center;
+            color: #b2dfdb;
+            font-size: 1em;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .highlight {
+            background: rgba(243, 156, 18, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- ===== SAME SIDEBAR (FROM style.css) ===== -->
+<!-- Sidebar -->
 <div id="sidebar">
-<a href="index.html">Accueil</a>
-<a href="mitose.html">Mitose</a>
-<a href="adn.html">ADN</a>
-<a href="stratigraphie.html">Stratigraphie</a>
-<a href="plis.html">Plis</a>
-<a href="failles.html">Failles</a>
-<a href="petrole.html">Pétrole</a>
+    <a href="index.html">Accueil</a>
+    <a href="mitose.html">Mitose</a>
+    <a href="adn.html">ADN</a>
+    <a href="stratigraphie.html">Stratigraphie</a>
+    <a href="plis.html">Plis</a>
+    <a href="failles.html">Failles</a>
+    <a href="#" class="active">Pétrole</a>
 </div>
 
 <div class="content">
+    <div class="glass-box">
 
-<div class="glass-box">
+        <!-- Slide 1 : Titre -->
+        <div class="slide active" id="slide1">
+            <h1>Conséquences de l'exploitation du pétrole<br>sur l'environnement et la santé</h1>
+            <p style="text-align:center; font-size:1.3em; margin-top:30px;">
+                Une présentation scientifique • Sciences 3D
+            </p>
+            <div style="text-align:center; margin-top:50px;">
+                <button class="btn" onclick="nextSlide()">Commencer la présentation</button>
+            </div>
+        </div>
 
-<!-- SLIDE 1 -->
-<div class="slide active">
-<h1>Le Pétrole</h1>
-<p>COLLE TON TEXTE COMPLET ICI</p>
+        <!-- Slide 2 : Introduction / Exploitation -->
+        <div class="slide" id="slide2">
+            <h2>3. L'exploitation du pétrole</h2>
+            <p>L'exploitation du pétrole a été l'un des principaux moteurs du développement industriel et économique du XXᵉ siècle. Source d'énergie dense et facilement transportable, il a façonné nos sociétés modernes, particulièrement avec la voiture omniprésente.</p>
+            <p>Mais derrière cette croissance se cachent des <span class="highlight">impacts environnementaux, sanitaires et géopolitiques considérables</span>.</p>
+        </div>
 
-<button class="btn"
-onclick="window.open('https://sketchfab.com/models/875a663302624757aac3d18b05653dfb/embed?autostart=1','_blank')">
-Voir le modèle 3D
-</button>
-</div>
+        <!-- Slide 3 : Impacts environnementaux -->
+        <div class="slide" id="slide3">
+            <h2>4. Impacts environnementaux</h2>
+            <p>Ils sont énormes et souvent invisibles à court terme.</p>
+            
+            <h3>4.1. Dégradation des écosystèmes</h3>
+            <ul>
+                <li>Déforestation pour l'accès aux gisements (Amazonie, Sibérie, Canada)</li>
+                <li>Fragmentation des habitats et disparition d'espèces animales</li>
+                <li>Pollution chronique des sols et des nappes phréatiques (ex. : plus de 7 000 fuites recensées dans le delta du Niger)</li>
+            </ul>
+        </div>
 
-<!-- SLIDE 2 -->
-<div class="slide">
-<h2>1. Informations géologiques</h2>
-<p>COLLE TON TEXTE COMPLET</p>
-</div>
+        <!-- Slide 4 : Marées noires -->
+        <div class="slide" id="slide4">
+            <h2>4.2. Pollution marine – Marées noires</h2>
+            <p>Entre 50 et 100 marées noires majeures surviennent chaque année dans le monde.</p>
+            
+            <p><strong>Exemples historiques :</strong></p>
+            <ul>
+                <li>1967 – Torrey Canyon (119 000 tonnes)</li>
+                <li>1978 – Amoco Cadiz (223 000 tonnes)</li>
+                <li>1989 – Exxon Valdez (40 000 tonnes)</li>
+                <li>2010 – Deepwater Horizon (≈ 600 000 tonnes)</li>
+            </ul>
+            <p>Ces catastrophes causent des dommages durables sur la biodiversité marine et les activités côtières.</p>
+        </div>
 
-<!-- SLIDE 3 -->
-<div class="slide">
-<h2>2. Nombre de puits</h2>
-<p>COLLE TON TEXTE COMPLET</p>
-</div>
+        <!-- Slide 5 : Impacts sanitaires -->
+        <div class="slide" id="slide5">
+            <h2>5. Impacts sanitaires</h2>
+            <p>Le pétrole pollue l’air, le sol et l’eau.</p>
+            
+            <h3>5.1. Pollution atmosphérique</h3>
+            <p>Les produits pétroliers émettent des oxydes d’azote (NOₓ), du monoxyde de carbone (CO) et des particules fines (PM₂.₅), responsables de maladies respiratoires et cardiovasculaires.</p>
+            <p><strong>L’OMS estime que la pollution de l’air cause 7 millions de morts prématurées par an dans le monde.</strong></p>
 
-<!-- SLIDE 4 -->
-<div class="slide">
-<h2>3. Exploitation</h2>
-<p>COLLE TON TEXTE COMPLET</p>
-</div>
+            <h3>5.2. Toxicité locale</h3>
+            <p>Autour des sites d’extraction et de raffinage : contamination par hydrocarbures aromatiques polycycliques et métaux lourds → augmentation des cancers, malformations congénitales et troubles neurologiques.</p>
+        </div>
 
-<!-- SLIDE 5 -->
-<div class="slide">
-<h2>4. Impacts environnementaux</h2>
-<p>COLLE TON TEXTE COMPLET</p>
-</div>
+        <!-- Slide 6 : Enjeux climatiques et sociaux -->
+        <div class="slide" id="slide6">
+            <h2>7. Enjeux sociaux et climatiques</h2>
+            <p>La sortie du pétrole est indispensable.</p>
+            
+            <h3>4.3. Contribution au changement climatique</h3>
+            <p>Le secteur pétrolier représente environ <strong>30 % des émissions mondiales de CO₂</strong> (≈ 12 milliards de tonnes par an).</p>
+            <p>À cela s’ajoutent les émissions de méthane (CH₄), dont le pouvoir de réchauffement est 84 fois supérieur à celui du CO₂ sur 20 ans.</p>
+        </div>
 
-<!-- SLIDE 6 -->
-<div class="slide">
-<h2>5. Impacts sanitaires</h2>
-<p>COLLE TON TEXTE COMPLET</p>
-</div>
+        <!-- Slide 7 : Conclusion -->
+        <div class="slide" id="slide7">
+            <h2>Conclusion</h2>
+            <p>L’exploitation du pétrole, moteur du progrès industriel, est aussi l’un des principaux facteurs de dégradation de la planète.</p>
+            <p>Ses conséquences environnementales, sanitaires et géopolitiques en font une ressource à double tranchant.</p>
+            <p style="font-size:1.2em; margin-top:40px; text-align:center;">
+                À l’heure du dérèglement climatique, la seule voie durable passe par :<br>
+                <strong>la réduction de notre dépendance aux hydrocarbures</strong>,<br>
+                <strong>la transition vers des énergies bas-carbone</strong>,<br>
+                et <strong>une réflexion globale sur nos modes de consommation</strong>.
+            </p>
+        </div>
 
-<!-- SLIDE 7 -->
-<div class="slide">
-<h2>6. Économie et géopolitique</h2>
-<p>COLLE TON TEXTE COMPLET</p>
-</div>
+        <!-- Contrôles -->
+        <div class="controls">
+            <button class="btn" onclick="prevSlide()">⬅️ Précédent</button>
+            <button class="btn" onclick="toggleAuto()">⏯ Auto</button>
+            <button class="btn" onclick="nextSlide()">Suivant ➡️</button>
+        </div>
 
-<!-- SLIDE 8 -->
-<div class="slide">
-<h2>Conclusion</h2>
-<p>COLLE TON TEXTE COMPLET</p>
-</div>
+        <div class="progress-container">
+            <div class="progress" id="progress"></div>
+        </div>
+        <div class="auto" id="autoStatus">Auto : OFF</div>
 
-<!-- CONTROLS -->
-<div class="controls">
-<button class="btn" onclick="prevSlide()">⬅️</button>
-<button class="btn" onclick="toggleAuto()">⏯ Auto</button>
-<button class="btn" onclick="nextSlide()">➡️</button>
-</div>
-
-<div class="progress-container">
-<div class="progress" id="progress"></div>
-</div>
-
-<div class="auto" id="autoStatus">Auto: OFF</div>
-
-</div>
-
+    </div>
 </div>
 
 <script>
+    let slides = document.querySelectorAll(".slide");
+    let currentIndex = 0;
+    let autoMode = false;
+    let autoInterval;
 
-let slides = document.querySelectorAll(".slide");
-let index = 0;
-let auto = false;
-let interval;
+    function showSlide(index) {
+        slides.forEach(s => s.classList.remove("active"));
+        slides[index].classList.add("active");
+        
+        // Mise à jour de la barre de progression
+        const progress = ((index) / (slides.length - 1)) * 100;
+        document.getElementById("progress").style.width = progress + "%";
+    }
 
-function showSlide(i){
-slides.forEach(s=>s.classList.remove("active"));
-slides[i].classList.add("active");
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
 
-document.getElementById("progress").style.width =
-((i+1)/slides.length)*100 + "%";
-}
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+    }
 
-function nextSlide(){
-index = (index+1) % slides.length;
-showSlide(index);
-}
+    function toggleAuto() {
+        autoMode = !autoMode;
+        const status = document.getElementById("autoStatus");
+        status.textContent = "Auto : " + (autoMode ? "ON" : "OFF");
 
-function prevSlide(){
-index = (index-1+slides.length)%slides.length;
-showSlide(index);
-}
+        if (autoMode) {
+            autoInterval = setInterval(nextSlide, 5000); // 5 secondes par slide
+        } else {
+            clearInterval(autoInterval);
+        }
+    }
 
-function toggleAuto(){
-auto = !auto;
+    // Navigation clavier
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") nextSlide();
+        if (e.key === "ArrowLeft") prevSlide();
+    });
 
-document.getElementById("autoStatus").innerText =
-"Auto: " + (auto ? "ON" : "OFF");
-
-if(auto){
-interval = setInterval(nextSlide,4000);
-}else{
-clearInterval(interval);
-}
-}
-
-/* KEYBOARD */
-document.addEventListener("keydown", e=>{
-if(e.key==="ArrowRight") nextSlide();
-if(e.key==="ArrowLeft") prevSlide();
-});
-
+    // Initialisation
+    showSlide(0);
 </script>
 
-<footer style="text-align:center;margin-top:20px;">
-© Wajdi Mathlouthi
+<footer style="text-align:center; padding:20px; color:#888; font-size:0.9em;">
+    © Wajdi Mathlouthi - Présentation Sciences 3D
 </footer>
 
 </body>
