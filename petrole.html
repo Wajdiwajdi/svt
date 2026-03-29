@@ -3,43 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pétrole – Ultimate</title>
+<title>Pétrole – Sciences</title>
 
 <style>
 
-/* BACKGROUND */
+/* ===== BASE ===== */
 body{
 margin:0;
 font-family:Arial, sans-serif;
 color:white;
-overflow:hidden;
-background:linear-gradient(270deg,#0f2027,#203a43,#2c5364);
-background-size:600% 600%;
-animation:bgMove 15s ease infinite;
+background:#0f2027;
 }
 
-@keyframes bgMove{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-/* SIDEBAR */
+/* ===== SIDEBAR (YOUR STYLE FIXED) ===== */
 #sidebar{
 position:fixed;
-left:-220px;
+left:-200px;
 top:0;
-width:220px;
+width:200px;
 height:100%;
 background:#111;
 padding-top:20px;
 transition:0.3s;
+z-index:1000;
+}
+
+#sidebar:hover{
+left:0;
 }
 
 #sidebar a{
 display:block;
-color:white;
 padding:15px;
+color:white;
 text-decoration:none;
 }
 
@@ -47,99 +43,91 @@ text-decoration:none;
 background:#f39c12;
 }
 
-#sidebar:hover{
-left:0;
-}
-
-/* CONTENT */
+/* ===== CONTENT ===== */
 .content{
 margin-left:20px;
 padding:20px;
-}
-
-/* SLIDES */
-.slides{
-position:relative;
-width:100%;
-height:75vh;
-}
-
-.slide{
-position:absolute;
-width:100%;
-height:100%;
-top:0;
-left:100%;
-opacity:0;
-transition:all 0.6s ease;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
 text-align:center;
-padding:40px;
-border-radius:20px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(10px);
-box-shadow:0 0 30px rgba(0,0,0,0.6);
+}
+
+/* ===== SLIDER BOX (NOT FULLSCREEN) ===== */
+.slider-box{
+max-width:1000px;
+margin:auto;
+background:rgba(255,255,255,0.05);
+padding:25px;
+border-radius:15px;
+box-shadow:0 0 20px rgba(0,0,0,0.6);
+}
+
+/* ===== SLIDES ===== */
+.slide{
+display:none;
+animation:fade 0.6s;
 }
 
 .slide.active{
-left:0;
-opacity:1;
+display:block;
 }
 
-/* TEXT */
+@keyframes fade{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* ===== TEXT ===== */
 h1,h2{
 color:#f39c12;
 }
 
 p{
-max-width:900px;
 line-height:1.7;
 }
 
-/* BUTTONS */
-.controls{
-text-align:center;
-margin-top:15px;
-}
-
-button{
+/* ===== BUTTONS (YOUR STYLE IMPROVED) ===== */
+.btn{
 padding:10px 20px;
-margin:5px;
+margin:10px;
+background:#f39c12;
 border:none;
 border-radius:8px;
-background:#f39c12;
-color:white;
 cursor:pointer;
+color:white;
 transition:0.3s;
 }
 
-button:hover{
+.btn:hover{
 background:#e67e22;
 transform:scale(1.05);
 }
 
-/* PROGRESS BAR */
-.progress{
-position:fixed;
-top:0;
-left:0;
-height:5px;
-background:#f39c12;
-width:0%;
+/* ===== CONTROLS ===== */
+.controls{
+margin-top:15px;
 }
 
-/* AUTOPLAY INDICATOR */
+/* ===== PROGRESS ===== */
+.progress-container{
+width:100%;
+height:6px;
+background:#222;
+border-radius:10px;
+margin-top:15px;
+}
+
+.progress{
+height:100%;
+width:0%;
+background:#f39c12;
+border-radius:10px;
+transition:0.3s;
+}
+
+/* ===== AUTO LABEL ===== */
 .auto{
-position:fixed;
-bottom:10px;
-right:10px;
-background:rgba(0,0,0,0.6);
-padding:8px 12px;
-border-radius:8px;
+margin-top:10px;
 font-size:14px;
+color:#ccc;
 }
 
 </style>
@@ -148,8 +136,7 @@ font-size:14px;
 
 <body>
 
-<div class="progress" id="progress"></div>
-
+<!-- SIDEBAR -->
 <div id="sidebar">
 <a href="index.html">Accueil</a>
 <a href="mitose.html">Mitose</a>
@@ -162,62 +149,77 @@ font-size:14px;
 
 <div class="content">
 
-<div class="slides">
+<div class="slider-box">
 
+<!-- SLIDE 1 -->
 <div class="slide active">
 <h1>Le Pétrole</h1>
-<p>COLLE ICI TON TEXTE COMPLET</p>
-<button onclick="window.open('https://sketchfab.com/models/875a663302624757aac3d18b05653dfb/embed?autostart=1','_blank')">
+<p>COLLE TON TEXTE COMPLET ICI</p>
+
+<button class="btn"
+onclick="window.open('https://sketchfab.com/models/875a663302624757aac3d18b05653dfb/embed?autostart=1','_blank')">
 Voir le modèle 3D
 </button>
 </div>
 
+<!-- SLIDE 2 -->
 <div class="slide">
 <h2>1. Informations géologiques</h2>
 <p>COLLE TON TEXTE COMPLET</p>
 </div>
 
+<!-- SLIDE 3 -->
 <div class="slide">
 <h2>2. Nombre de puits</h2>
 <p>COLLE TON TEXTE COMPLET</p>
 </div>
 
+<!-- SLIDE 4 -->
 <div class="slide">
 <h2>3. Exploitation</h2>
 <p>COLLE TON TEXTE COMPLET</p>
 </div>
 
+<!-- SLIDE 5 -->
 <div class="slide">
 <h2>4. Impacts environnementaux</h2>
 <p>COLLE TON TEXTE COMPLET</p>
 </div>
 
+<!-- SLIDE 6 -->
 <div class="slide">
 <h2>5. Impacts sanitaires</h2>
 <p>COLLE TON TEXTE COMPLET</p>
 </div>
 
+<!-- SLIDE 7 -->
 <div class="slide">
 <h2>6. Économie et géopolitique</h2>
 <p>COLLE TON TEXTE COMPLET</p>
 </div>
 
+<!-- SLIDE 8 -->
 <div class="slide">
 <h2>Conclusion</h2>
 <p>COLLE TON TEXTE COMPLET</p>
 </div>
 
-</div>
-
+<!-- CONTROLS -->
 <div class="controls">
-<button onclick="prevSlide()">⬅️</button>
-<button onclick="toggleAuto()">⏯ Auto</button>
-<button onclick="nextSlide()">➡️</button>
+<button class="btn" onclick="prevSlide()">⬅️</button>
+<button class="btn" onclick="toggleAuto()">⏯ Auto</button>
+<button class="btn" onclick="nextSlide()">➡️</button>
 </div>
 
+<div class="progress-container">
+<div class="progress" id="progress"></div>
 </div>
 
 <div class="auto" id="autoStatus">Auto: OFF</div>
+
+</div>
+
+</div>
 
 <script>
 
@@ -265,6 +267,10 @@ if(e.key==="ArrowLeft") prevSlide();
 });
 
 </script>
+
+<footer style="text-align:center;margin-top:20px;">
+© Wajdi Mathlouthi
+</footer>
 
 </body>
 </html>
