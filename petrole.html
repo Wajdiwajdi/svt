@@ -2,251 +2,178 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pétrole – Sciences 3D</title>
-<link rel="stylesheet" href="style.css">
+<title>Pétrole</title>
 
 <style>
-
-/* ===== CONTENT CENTER ===== */
-.content{
-margin-left:20px;
-padding:30px;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
+body {
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
 }
 
-/* ===== GLASS BOX (LIKE YOUR OTHER PAGES) ===== */
-.glass-box{
-width:900px;
-padding:35px;
-border-radius:20px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(12px);
-box-shadow:0 0 30px rgba(0,0,0,0.6);
-text-align:center;
+/* Sidebar */
+#sidebar {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  padding-top: 20px;
 }
 
-/* ===== SLIDES ===== */
-.slide{
-display:none;
-animation:fade 0.5s ease;
+#sidebar a {
+  display: block;
+  color: white;
+  padding: 12px;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.slide.active{
-display:block;
+#sidebar a:hover {
+  background: #00c6ff;
 }
 
-@keyframes fade{
-from{opacity:0; transform:translateY(20px);}
-to{opacity:1; transform:translateY(0);}
+/* Content */
+.content {
+  margin-left: 220px;
+  padding: 20px;
 }
 
-/* ===== TEXT ===== */
-h1{
-color:#f39c12;
-margin-bottom:15px;
+/* Glass Box */
+.glass {
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  animation: fadeIn 1s ease;
 }
 
-h2{
-color:#ffa726;
-margin-bottom:10px;
+/* Titles */
+h1, h2 {
+  color: #00e6ff;
 }
 
-p{
-line-height:1.8;
-max-width:750px;
-margin:auto;
+/* Animation */
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
 }
 
-/* ===== BUTTON (SAME STYLE) ===== */
-.btn{
-margin-top:15px;
-padding:10px 20px;
-border:none;
-border-radius:10px;
-background:#f39c12;
-color:white;
-cursor:pointer;
-transition:0.3s;
+/* Images */
+img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
 }
-
-.btn:hover{
-background:#e67e22;
-transform:scale(1.05);
-}
-
-/* ===== CONTROLS ===== */
-.controls{
-margin-top:20px;
-}
-
-/* ===== PROGRESS BAR ===== */
-.progress-container{
-width:100%;
-height:6px;
-background:#222;
-border-radius:10px;
-margin-top:20px;
-}
-
-.progress{
-height:100%;
-width:0%;
-background:#f39c12;
-border-radius:10px;
-transition:0.3s;
-}
-
-/* ===== AUTO TEXT ===== */
-.auto{
-margin-top:10px;
-font-size:14px;
-color:#ccc;
-}
-
 </style>
-
 </head>
 
 <body>
 
-<!-- ===== SAME SIDEBAR (FROM style.css) ===== -->
 <div id="sidebar">
-<a href="index.html">Accueil</a>
-<a href="mitose.html">Mitose</a>
-<a href="adn.html">ADN</a>
-<a href="stratigraphie.html">Stratigraphie</a>
-<a href="plis.html">Plis</a>
-<a href="failles.html">Failles</a>
-<a href="petrole.html">Pétrole</a>
+  <a href="index.html">Accueil</a>
+  <a href="mitose.html">Mitose</a>
+  <a href="adn.html">ADN</a>
+  <a href="stratigraphie.html">Stratigraphie</a>
+  <a href="plis.html">Plis</a>
+  <a href="failles.html">Failles</a>
+  <a href="petrole.html">Pétrole</a>
 </div>
 
 <div class="content">
 
-<div class="glass-box">
+<h1>Conséquences de l'exploitation du pétrole sur la santé et l’environnement</h1>
 
-<!-- SLIDE 1 -->
-<div class="slide active">
-<h1>Le Pétrole</h1>
-<p>COLLE TON TEXTE COMPLET ICI</p>
-
-<button class="btn"
-onclick="window.open('https://sketchfab.com/models/875a663302624757aac3d18b05653dfb/embed?autostart=1','_blank')">
-Voir le modèle 3D
-</button>
+<div class="glass">
+<p>
+L’exploitation pétrolière a de nombreuses conséquences négatives, notamment : pollution de l’air, de l’eau et des sols, marées noires, dégazages sauvages, destruction des forêts, pollution des nappes phréatiques, rejets de gaz à effet de serre contribuant au changement climatique, destruction des paysages, déforestation, risques pour la santé humaine notamment liée à l’exposition aux hydrocarbures toxiques, déchets industriels et chimiques issus de l’exploitation, impacts psychosociaux sur les communautés touchées, risques de catastrophes secondaires comme les explosions, et épuisement des ressources fossiles limitées. Le transport du pétrole est énergivore et génère aussi des pollutions.
+</p>
+<img src="images/petrole1.jpg">
 </div>
 
-<!-- SLIDE 2 -->
-<div class="slide">
+<div class="glass">
 <h2>1. Informations géologiques</h2>
-<p>COLLE TON TEXTE COMPLET</p>
+<p>
+Le pétrole est formé par la décomposition de la matière organique enfouie sous des couches sédimentaires pendant des millions d’années...
+L’industrie pétrolière a largement contribué au progrès de nombreuses technologies.
+</p>
+<img src="images/strates.jpg">
 </div>
 
-<!-- SLIDE 3 -->
-<div class="slide">
-<h2>2. Nombre de puits</h2>
-<p>COLLE TON TEXTE COMPLET</p>
+<div class="glass">
+<h2>2. Nombre de puits de pétrole</h2>
+<p>
+Au niveau mondial, on dénombre plusieurs centaines de milliers de puits actifs couvrant tous les continents...
+Le groupe pétrolier fondé au Canada en 1994 Vermilion exploite 70 puits...
+</p>
+<img src="images/plateforme.jpg">
 </div>
 
-<!-- SLIDE 4 -->
-<div class="slide">
-<h2>3. Exploitation</h2>
-<p>COLLE TON TEXTE COMPLET</p>
+<div class="glass">
+<h2>3. L'exploitation du pétrole</h2>
+<p>
+Elle a été l’un des moteurs majeurs du développement industriel et économique du XXᵉ siècle...
+Les avions ont transporté plus de 5 milliards de passagers en 2025...
+</p>
 </div>
 
-<!-- SLIDE 5 -->
-<div class="slide">
+<div class="glass">
 <h2>4. Impacts environnementaux</h2>
-<p>COLLE TON TEXTE COMPLET</p>
+
+<h3>4.1 Dégradation des écosystèmes</h3>
+<p>
+L’extraction pétrolière entraîne la destruction des milieux naturels...
+Dans le delta du Niger, plus de 7 000 fuites ont été recensées...
+</p>
+
+<h3>4.2 Pollution marine</h3>
+<p>
+En moyenne, il y a entre 50 et 100 marées noires chaque année dans le monde...
+2010 - Deepwater Horizon (BP)...
+</p>
+
+<img src="images/maree_noire.jpg">
+
+<h3>4.3 Changement climatique</h3>
+<p>
+La combustion du pétrole émet du CO₂...
+</p>
+
 </div>
 
-<!-- SLIDE 6 -->
-<div class="slide">
+<div class="glass">
 <h2>5. Impacts sanitaires</h2>
-<p>COLLE TON TEXTE COMPLET</p>
+<p>
+Les produits pétroliers génèrent des maladies respiratoires...
+L’OMS estime que la pollution de l’air cause 7 millions de morts...
+</p>
 </div>
 
-<!-- SLIDE 7 -->
-<div class="slide">
-<h2>6. Économie et géopolitique</h2>
-<p>COLLE TON TEXTE COMPLET</p>
+<div class="glass">
+<h2>6. Conséquences économiques et géopolitiques</h2>
+<p>
+Le pétrole reste la principale source d’énergie mondiale...
+</p>
 </div>
 
-<!-- SLIDE 8 -->
-<div class="slide">
-<h2>Conclusion</h2>
-<p>COLLE TON TEXTE COMPLET</p>
+<div class="glass">
+<h2>7. Enjeux sociaux et climatiques</h2>
+<p>
+La sortie du pétrole est indispensable...
+Le bonheur ne réside pas dans la consommation excessive...
+</p>
 </div>
 
-<!-- CONTROLS -->
-<div class="controls">
-<button class="btn" onclick="prevSlide()">⬅️</button>
-<button class="btn" onclick="toggleAuto()">⏯ Auto</button>
-<button class="btn" onclick="nextSlide()">➡️</button>
-</div>
-
-<div class="progress-container">
-<div class="progress" id="progress"></div>
-</div>
-
-<div class="auto" id="autoStatus">Auto: OFF</div>
-
+<div class="glass">
+<h2>8. Conclusion</h2>
+<p>
+L’exploitation du pétrole, moteur du progrès industriel, est aussi l’un des principaux facteurs de dégradation de la planète...
+</p>
 </div>
 
 </div>
-
-<script>
-
-let slides = document.querySelectorAll(".slide");
-let index = 0;
-let auto = false;
-let interval;
-
-function showSlide(i){
-slides.forEach(s=>s.classList.remove("active"));
-slides[i].classList.add("active");
-
-document.getElementById("progress").style.width =
-((i+1)/slides.length)*100 + "%";
-}
-
-function nextSlide(){
-index = (index+1) % slides.length;
-showSlide(index);
-}
-
-function prevSlide(){
-index = (index-1+slides.length)%slides.length;
-showSlide(index);
-}
-
-function toggleAuto(){
-auto = !auto;
-
-document.getElementById("autoStatus").innerText =
-"Auto: " + (auto ? "ON" : "OFF");
-
-if(auto){
-interval = setInterval(nextSlide,4000);
-}else{
-clearInterval(interval);
-}
-}
-
-/* KEYBOARD */
-document.addEventListener("keydown", e=>{
-if(e.key==="ArrowRight") nextSlide();
-if(e.key==="ArrowLeft") prevSlide();
-});
-
-</script>
-
-<footer style="text-align:center;margin-top:20px;">
-© Wajdi Mathlouthi
-</footer>
 
 </body>
 </html>
