@@ -4,150 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conséquences de l'exploitation du pétrole sur l'environnement et la santé</title>
-    <link rel="stylesheet" href="style.css"> <!-- Si tu as un fichier style.css global -->
+    
+    <link rel="stylesheet" href="style.css">
+    
     <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: #e0f2f1;
-            min-height: 100vh;
-        }
-
-        #sidebar {
-            position: fixed;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 220px;
-            background: rgba(0, 0, 0, 0.85);
-            padding-top: 20px;
-            overflow-y: auto;
-            z-index: 100;
-        }
-
-        #sidebar a {
-            display: block;
-            padding: 15px 25px;
-            color: #b2dfdb;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        #sidebar a:hover, #sidebar a.active {
-            background: #f39c12;
-            color: white;
-            padding-left: 35px;
-        }
-
-        .content {
-            margin-left: 240px;
-            padding: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .glass-box {
-            width: 1000px;
-            max-width: 95%;
-            padding: 40px 50px;
-            border-radius: 25px;
-            background: rgba(255, 255, 255, 0.09);
-            backdrop-filter: blur(15px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
-            text-align: left;
-        }
-
-        h1 {
-            color: #f39c12;
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2.8em;
-        }
-
-        h2 {
-            color: #ffa726;
-            border-bottom: 3px solid #f39c12;
-            padding-bottom: 10px;
-            margin-top: 40px;
-        }
-
-        p, li {
-            line-height: 1.85;
-            font-size: 1.05em;
-            margin-bottom: 18px;
-        }
-
         .slide {
             display: none;
-            animation: fadeIn 0.6s ease forwards;
+            animation: fade 0.6s ease forwards;
         }
-
         .slide.active {
             display: block;
         }
-
-        @keyframes fadeIn {
+        @keyframes fade {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
-        .btn {
-            padding: 12px 28px;
-            margin: 10px 8px;
-            border: none;
-            border-radius: 12px;
-            background: #f39c12;
-            color: white;
-            font-size: 1.1em;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .btn:hover {
-            background: #e67e22;
-            transform: scale(1.08);
-        }
-
-        .controls {
-            text-align: center;
-            margin-top: 40px;
-        }
-
+        
         .progress-container {
+            width: 80%;
+            max-width: 700px;
             height: 8px;
-            background: #1a252f;
+            background: rgba(255,255,255,0.2);
             border-radius: 10px;
-            margin: 25px 0;
+            margin: 30px auto;
             overflow: hidden;
         }
-
         .progress {
             height: 100%;
             width: 0%;
-            background: linear-gradient(to right, #f39c12, #ffcc33);
+            background: #28a5ff;
             transition: width 0.4s ease;
         }
-
-        .auto {
-            text-align: center;
-            color: #b2dfdb;
-            font-size: 1em;
+        .controls {
+            margin-top: 25px;
         }
-
+        .auto-status {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #ddd;
+        }
+        .btn-3d, .btn-start {
+            font-size: 24px;
+            padding: 18px 35px;
+            margin: 20px 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+        .btn-start {
+            background: #28a5ff;
+        }
+        .btn-start:hover {
+            background: #1c7cc0;
+            transform: scale(1.08);
+        }
         img {
             max-width: 100%;
-            border-radius: 15px;
-            margin: 20px 0;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            border-radius: 12px;
+            margin: 20px 0 15px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
         }
-
-        .highlight {
-            background: rgba(243, 156, 18, 0.2);
-            padding: 2px 6px;
-            border-radius: 4px;
+        p {
+            font-size: 21px;
+            line-height: 1.65;
+            max-width: 780px;
+            margin: 20px auto;
+        }
+        ul {
+            text-align: left;
+            max-width: 780px;
+            margin: 20px auto;
+            font-size: 20px;
         }
     </style>
 </head>
@@ -161,122 +86,127 @@
     <a href="stratigraphie.html">Stratigraphie</a>
     <a href="plis.html">Plis</a>
     <a href="failles.html">Failles</a>
-    <a href="#" class="active">Pétrole</a>
+    <a href="petrole.html" class="active">Pétrole</a>
 </div>
 
 <div class="content">
-    <div class="glass-box">
 
-        <!-- Slide 1 : Titre -->
-        <div class="slide active" id="slide1">
-            <h1>Conséquences de l'exploitation du pétrole<br>sur l'environnement et la santé</h1>
-            <p style="text-align:center; font-size:1.3em; margin-top:30px;">
-                Une présentation scientifique • Sciences 3D
-            </p>
-            <div style="text-align:center; margin-top:50px;">
-                <button class="btn" onclick="nextSlide()">Commencer la présentation</button>
+    <!-- Home Screen -->
+    <div id="home-screen" class="card">
+        <h1>Conséquences de l'exploitation du pétrole<br>sur l'environnement et la santé</h1>
+        
+        <p style="font-size: 24px; max-width: 820px; margin: 35px auto; line-height: 1.6;">
+            Bonjour à tous. Aujourd'hui, je vais vous présenter les conséquences souvent cachées de l'exploitation du pétrole sur notre environnement et sur notre santé.
+        </p>
+
+        <div style="margin: 40px 0;">
+            <button class="btn btn-3d" 
+                    onclick="window.open('https://sketchfab.com/models/875a663302624757aac3d18b05653dfb/embed?autostart=1','_blank')">
+                Voir le modèle 3D
+            </button>
+            
+            <button class="btn btn-start" onclick="startPresentation()">
+                Lancer la présentation
+            </button>
+        </div>
+    </div>
+
+    <!-- Presentation Slides -->
+    <div id="presentation" style="display: none;">
+        <div class="card">
+
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <h1>1. L'exploitation du pétrole</h1>
+                <img src="images/1.webp" alt="Pompe extractrice de pétrole">
+                <p>Le pétrole est une ressource fossile formée il y a des millions d’années à partir de restes d’organismes marins. Aujourd’hui, il reste l’une des sources d’énergie les plus utilisées dans le monde.</p>
+                <p>Grâce à des machines comme celle que vous voyez sur l’image, on extrait le pétrole du sous-sol. Cette activité a permis le développement industriel rapide du XXᵉ siècle, la généralisation de la voiture, de l’avion et de nombreux produits en plastique. Mais ce progrès a un coût très élevé que nous commençons seulement à mesurer pleinement.</p>
             </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <h1>2. Plateformes offshore</h1>
+                <img src="images/2.jpg" alt="Plateforme pétrolière en mer">
+                <p>Une grande partie du pétrole mondial est extraite en mer sur des plateformes offshore comme celle-ci. Ces installations sont impressionnantes par leur taille et leur complexité technique.</p>
+                <p>Cependant, travailler en pleine mer augmente considérablement les risques d’accidents. Quand un problème survient, les conséquences peuvent être catastrophiques pour l’océan et les côtes, comme nous le verrons plus tard.</p>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+                <h1>3. Impacts environnementaux - Déforestation</h1>
+                <img src="images/3.jpg" alt="Déforestation en Amazonie">
+                <p>Pour accéder aux gisements de pétrole, les entreprises doivent souvent ouvrir des routes en pleine forêt tropicale. L’image que vous voyez montre les conséquences dramatiques de cette déforestation en Amazonie.</p>
+                <p>Cela entraîne la destruction d’habitats naturels, la disparition de nombreuses espèces animales et végétales, et une perte importante de biodiversité. De plus, les sols deviennent vulnérables à l’érosion et à la pollution par les produits chimiques utilisés lors de l’extraction.</p>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide">
+                <h1>4. Les grandes catastrophes maritimes</h1>
+                <img src="images/5.webp" alt="Explosion Deepwater Horizon">
+                <p>L’un des accidents les plus graves de l’histoire récente est celui de Deepwater Horizon en 2010. Une explosion sur une plateforme a provoqué l’une des plus grandes marées noires jamais enregistrées.</p>
+                <p>Près de 600 000 tonnes de pétrole se sont déversées dans le Golfe du Mexique. Cet événement a rappelé au monde entier à quel point l’exploitation du pétrole en mer peut être dangereuse et difficile à contrôler.</p>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="slide">
+                <h1>5. Conséquences sur la faune marine</h1>
+                <img src="images/4.webp" alt="Oiseau couvert de pétrole">
+                <p>Voici l’une des images les plus choquantes de l’impact du pétrole : un oiseau complètement recouvert de pétrole après une marée noire.</p>
+                <p>Le pétrole colle les plumes, empêche les oiseaux de voler et de se nourrir, et provoque souvent une mort lente et douloureuse. Des milliers d’oiseaux, de dauphins, de tortues et de poissons meurent à chaque grande marée noire. Même des années après, les écosystèmes marins restent perturbés.</p>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="slide">
+                <h1>6. Pollution de l’air et impacts sur la santé</h1>
+                <img src="images/6.webp" alt="Raffinerie pétrolière">
+                <p>Les raffineries comme celle que vous voyez rejettent continuellement dans l’air des particules fines, des oxydes d’azote et d’autres substances toxiques.</p>
+                <p>Selon l’Organisation Mondiale de la Santé, la pollution de l’air liée aux combustibles fossiles est responsable d’environ 7 millions de morts prématurées chaque année dans le monde. Près des zones d’extraction et de raffinage, les populations locales souffrent davantage de maladies respiratoires, de cancers et de troubles neurologiques.</p>
+            </div>
+
+            <!-- Slide 7 -->
+            <div class="slide">
+                <h1>7. Conclusion – Vers une transition énergétique</h1>
+                <img src="images/7.jpg" alt="Transition énergétique">
+                <p>Le pétrole a apporté beaucoup de confort et de progrès à notre société, mais il est aujourd’hui clair que nous ne pouvons plus continuer sur cette voie sans mettre en danger notre planète et notre santé.</p>
+                <p>La solution passe par une réduction progressive de notre dépendance aux énergies fossiles et par une transition sérieuse vers les énergies renouvelables comme le solaire et l’éolien. Cela demande des efforts collectifs : gouvernements, entreprises et citoyens.</p>
+                <p>En conclusion, il est urgent d’agir maintenant pour préserver l’environnement et garantir un avenir plus sain aux générations futures.</p>
+            </div>
+
+            <!-- Navigation -->
+            <div class="controls">
+                <button class="btn" onclick="prevSlide()">⬅️ Précédent</button>
+                <button class="btn" onclick="toggleAuto()">⏯ Auto</button>
+                <button class="btn" onclick="nextSlide()">Suivant ➡️</button>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress" id="progress"></div>
+            </div>
+            <div class="auto-status" id="autoStatus">Auto : OFF</div>
+
         </div>
-
-        <!-- Slide 2 : Introduction / Exploitation -->
-        <div class="slide" id="slide2">
-            <h2>3. L'exploitation du pétrole</h2>
-            <p>L'exploitation du pétrole a été l'un des principaux moteurs du développement industriel et économique du XXᵉ siècle. Source d'énergie dense et facilement transportable, il a façonné nos sociétés modernes, particulièrement avec la voiture omniprésente.</p>
-            <p>Mais derrière cette croissance se cachent des <span class="highlight">impacts environnementaux, sanitaires et géopolitiques considérables</span>.</p>
-        </div>
-
-        <!-- Slide 3 : Impacts environnementaux -->
-        <div class="slide" id="slide3">
-            <h2>4. Impacts environnementaux</h2>
-            <p>Ils sont énormes et souvent invisibles à court terme.</p>
-            
-            <h3>4.1. Dégradation des écosystèmes</h3>
-            <ul>
-                <li>Déforestation pour l'accès aux gisements (Amazonie, Sibérie, Canada)</li>
-                <li>Fragmentation des habitats et disparition d'espèces animales</li>
-                <li>Pollution chronique des sols et des nappes phréatiques (ex. : plus de 7 000 fuites recensées dans le delta du Niger)</li>
-            </ul>
-        </div>
-
-        <!-- Slide 4 : Marées noires -->
-        <div class="slide" id="slide4">
-            <h2>4.2. Pollution marine – Marées noires</h2>
-            <p>Entre 50 et 100 marées noires majeures surviennent chaque année dans le monde.</p>
-            
-            <p><strong>Exemples historiques :</strong></p>
-            <ul>
-                <li>1967 – Torrey Canyon (119 000 tonnes)</li>
-                <li>1978 – Amoco Cadiz (223 000 tonnes)</li>
-                <li>1989 – Exxon Valdez (40 000 tonnes)</li>
-                <li>2010 – Deepwater Horizon (≈ 600 000 tonnes)</li>
-            </ul>
-            <p>Ces catastrophes causent des dommages durables sur la biodiversité marine et les activités côtières.</p>
-        </div>
-
-        <!-- Slide 5 : Impacts sanitaires -->
-        <div class="slide" id="slide5">
-            <h2>5. Impacts sanitaires</h2>
-            <p>Le pétrole pollue l’air, le sol et l’eau.</p>
-            
-            <h3>5.1. Pollution atmosphérique</h3>
-            <p>Les produits pétroliers émettent des oxydes d’azote (NOₓ), du monoxyde de carbone (CO) et des particules fines (PM₂.₅), responsables de maladies respiratoires et cardiovasculaires.</p>
-            <p><strong>L’OMS estime que la pollution de l’air cause 7 millions de morts prématurées par an dans le monde.</strong></p>
-
-            <h3>5.2. Toxicité locale</h3>
-            <p>Autour des sites d’extraction et de raffinage : contamination par hydrocarbures aromatiques polycycliques et métaux lourds → augmentation des cancers, malformations congénitales et troubles neurologiques.</p>
-        </div>
-
-        <!-- Slide 6 : Enjeux climatiques et sociaux -->
-        <div class="slide" id="slide6">
-            <h2>7. Enjeux sociaux et climatiques</h2>
-            <p>La sortie du pétrole est indispensable.</p>
-            
-            <h3>4.3. Contribution au changement climatique</h3>
-            <p>Le secteur pétrolier représente environ <strong>30 % des émissions mondiales de CO₂</strong> (≈ 12 milliards de tonnes par an).</p>
-            <p>À cela s’ajoutent les émissions de méthane (CH₄), dont le pouvoir de réchauffement est 84 fois supérieur à celui du CO₂ sur 20 ans.</p>
-        </div>
-
-        <!-- Slide 7 : Conclusion -->
-        <div class="slide" id="slide7">
-            <h2>Conclusion</h2>
-            <p>L’exploitation du pétrole, moteur du progrès industriel, est aussi l’un des principaux facteurs de dégradation de la planète.</p>
-            <p>Ses conséquences environnementales, sanitaires et géopolitiques en font une ressource à double tranchant.</p>
-            <p style="font-size:1.2em; margin-top:40px; text-align:center;">
-                À l’heure du dérèglement climatique, la seule voie durable passe par :<br>
-                <strong>la réduction de notre dépendance aux hydrocarbures</strong>,<br>
-                <strong>la transition vers des énergies bas-carbone</strong>,<br>
-                et <strong>une réflexion globale sur nos modes de consommation</strong>.
-            </p>
-        </div>
-
-        <!-- Contrôles -->
-        <div class="controls">
-            <button class="btn" onclick="prevSlide()">⬅️ Précédent</button>
-            <button class="btn" onclick="toggleAuto()">⏯ Auto</button>
-            <button class="btn" onclick="nextSlide()">Suivant ➡️</button>
-        </div>
-
-        <div class="progress-container">
-            <div class="progress" id="progress"></div>
-        </div>
-        <div class="auto" id="autoStatus">Auto : OFF</div>
-
     </div>
 </div>
 
 <script>
-    let slides = document.querySelectorAll(".slide");
     let currentIndex = 0;
     let autoMode = false;
-    let autoInterval;
+    let interval;
+    let slides = [];
+
+    function startPresentation() {
+        document.getElementById('home-screen').style.display = 'none';
+        document.getElementById('presentation').style.display = 'block';
+        slides = document.querySelectorAll('.slide');
+        currentIndex = 0;
+        showSlide(0);
+    }
 
     function showSlide(index) {
-        slides.forEach(s => s.classList.remove("active"));
-        slides[index].classList.add("active");
-        
-        // Mise à jour de la barre de progression
-        const progress = ((index) / (slides.length - 1)) * 100;
-        document.getElementById("progress").style.width = progress + "%";
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
+        const progress = (index / (slides.length - 1)) * 100;
+        document.getElementById('progress').style.width = progress + '%';
     }
 
     function nextSlide() {
@@ -291,29 +221,24 @@
 
     function toggleAuto() {
         autoMode = !autoMode;
-        const status = document.getElementById("autoStatus");
-        status.textContent = "Auto : " + (autoMode ? "ON" : "OFF");
-
+        document.getElementById('autoStatus').textContent = "Auto : " + (autoMode ? "ON" : "OFF");
         if (autoMode) {
-            autoInterval = setInterval(nextSlide, 5000); // 5 secondes par slide
+            clearInterval(interval);
+            interval = setInterval(nextSlide, 7500);   // ~7.5 seconds per slide
         } else {
-            clearInterval(autoInterval);
+            clearInterval(interval);
         }
     }
 
-    // Navigation clavier
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "ArrowRight") nextSlide();
-        if (e.key === "ArrowLeft") prevSlide();
+    document.addEventListener('keydown', e => {
+        if (document.getElementById('presentation').style.display === 'block') {
+            if (e.key === "ArrowRight") nextSlide();
+            if (e.key === "ArrowLeft") prevSlide();
+        }
     });
-
-    // Initialisation
-    showSlide(0);
 </script>
 
-<footer style="text-align:center; padding:20px; color:#888; font-size:0.9em;">
-    © Wajdi Mathlouthi - Présentation Sciences 3D
-</footer>
+<footer>© Wajdi Mathlouthi - Sciences 3D</footer>
 
 </body>
 </html>
